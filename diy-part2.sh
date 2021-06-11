@@ -110,8 +110,8 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns packa
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
-#添加ksmbd
-#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
+#添加amlogic
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 #添加udp2raw
 git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
 git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
