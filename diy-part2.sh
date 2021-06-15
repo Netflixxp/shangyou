@@ -30,7 +30,6 @@ git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttno
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
-#git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
 git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
@@ -123,7 +122,14 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
-#svn co https://github.com/Lienol/openwrt-packages/trunk/utils/dockerd
-#svn co https://github.com/Lienol/openwrt-packages/trunk/utils/docker
+
+# Docker
+svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
+git clone --depth=1 https://github.com/lisaac/luci-lib-docker
+if [ -e feeds/packages/utils/docker-ce ];then
+	sed -i '/dockerd/d' package/luci-app-dockerman/Makefile
+	sed -i 's/+docker/+docker-ce/g' package/luci-app-dockerman/Makefile
+fi
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
