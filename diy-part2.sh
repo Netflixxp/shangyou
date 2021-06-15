@@ -18,22 +18,6 @@ sed -i 's#192.168.1.1#192.168.1.99#g' package/base-files/files/bin/config_genera
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
 sed -i 's/services/system/g' package/lean/luci-app-cpufreq/luasrc/controller/cpufreq.lua
 
-# fix nginx-ssl-util error (do not use fallthrough attribute)
-rm feeds/packages/net/nginx-util/src/nginx-ssl-util.hpp
-wget -P feeds/packages/net/nginx-util/src https://raw.githubusercontent.com/openwrt/packages/master/net/nginx-util/src/nginx-ssl-util.hpp
-
-# fdk-aac
-rm -rf feeds/packages/sound/fdk-aac
-svn co https://github.com/openwrt/packages/trunk/sound/fdk-aac feeds/packages/sound/fdk-aac
-
-# lvm2
-rm -rf feeds/packages/utils/lvm2
-svn co https://github.com/openwrt/packages/trunk/utils/lvm2 feeds/packages/utils/lvm2
-
-# tini
-rm -rf feeds/packages/utils/tini
-svn co https://github.com/openwrt/packages/trunk/utils/tini feeds/packages/utils/tini
-
 #移除不用软件包
 rm -rf package/lean/luci-app-dockerman
 rm -rf package/lean/luci-app-wrtbwmon
