@@ -86,7 +86,7 @@ jobs:
         echo $OpVersion2
         sed -i "s/DISTRIB_REVISION=.*/DISTRIB_REVISION=\'$OpVersion1\ $OpVersion2\'\"\ \>>\ \/\etc\/\openwrt_release/" package/lean/default-settings/files/zzz-default-settings
         echo "$(cat package/lean/default-settings/files/zzz-default-settings)" | grep -Po "DISTRIB_REVISION=\'\K[^\']*"
-        sed -i "/CPU usage/a\                \<tr><td\ \width=\"33%\"\> 使用帮助\ <\/td><td>点击直达F大帖子：<a href=\"https://www.right.com.cn/forum/thread-4055451-1-1.html\">\ ➦新帖 \</a> 和 <a href=\"https://www.right.com.cn/forum/thread-981406-1-1.html\">\ ➦旧帖 \</a></td></tr>" package/lean/autocore/files/arm/index.htm
+        sed -i "/CPU usage/a\                \<tr><td\ \width=\"33%\"\> JCNF编译\ <\/td><td>点击跳转相关链接：<a href=\"https://ybfl.xyz\">\ ➦博客教程 \</a>    <a href=\"https://www.jcnf.xyz/nf\">\ ➦奈飞购买 \</a>    <a href=\"https://t.me/mffjc\">\ ➦TG频道 \</a></td></tr>" package/lean/autocore/files/arm/index.htm
 
     - name: Load custom configuration
       run: |
