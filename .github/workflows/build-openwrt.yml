@@ -38,7 +38,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout
@@ -50,7 +50,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
+        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -86,7 +86,6 @@ jobs:
         echo $OpVersion2
         sed -i "s/DISTRIB_REVISION=.*/DISTRIB_REVISION=\'$OpVersion1\ $OpVersion2\'\"\ \>>\ \/\etc\/\openwrt_release/" package/lean/default-settings/files/zzz-default-settings
         echo "$(cat package/lean/default-settings/files/zzz-default-settings)" | grep -Po "DISTRIB_REVISION=\'\K[^\']*"
-        sed -i "/CPU usage/a\                \<tr><td\ \width=\"33%\"\> JCNF编译\ <\/td><td>点击跳转相关链接：<a href=\"https://ybfl.xyz\">\ ➦博客教程 \</a>    <a href=\"https://www.jcnf.xyz/nf\">\ ➦奈飞购买 \</a>    <a href=\"https://t.me/mffjc\">\ ➦TG频道 \</a></td></tr>" package/lean/autocore/files/arm/index.htm
 
     - name: Load custom configuration
       run: |
