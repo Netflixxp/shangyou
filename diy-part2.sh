@@ -14,7 +14,7 @@ sed -i 's#192.168.1.1#192.168.1.99#g' package/base-files/files/bin/config_genera
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
 sed -i 's/services/system/g' package/lean/luci-app-cpufreq/luasrc/controller/cpufreq.lua
 
-# 移除不用软件包
+# # 移除不用软件包
 rm -rf package/lean/luci-app-dockerman
 rm -rf package/lean/luci-app-wrtbwmon
 rm -rf package/lean/luci-theme-argon
