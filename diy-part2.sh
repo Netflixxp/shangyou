@@ -28,7 +28,8 @@ git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
 
 # 科学上网插件依赖
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
-svn co https://github.com/xiaorouji/openwrt-passwall/tree/packages/v2ray-geodata package/v2ray-geodata
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/v2ray-geodata
+
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
