@@ -85,9 +85,11 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.0.2/g' feeds/packages/utils/runc/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=6c3cca4bbeb5d9b2f5e3c0c401c9d27bc8a5d2a0db8a2f6a06efd03ad3c38a33/g' feeds/packages/utils/runc/Makefile
-sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=52b36a2dd837e8462de8e01458bf02cf9eea47dd/g' feeds/packages/utils/runc/Makefile
+
+# docker
+sed -i 's/PKG_VERSION:=20.10.12/PKG_VERSION:=20.10.13/g' feeds/packages/utils/docker/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=5aa34f34b2c6f21ade2227edd08b803d972842d1abd5e70d7e4e758f966e4e3c/g' feeds/packages/utils/docker/Makefile
+sed -i 's/PKG_GIT_SHORT_COMMIT:=e91ed57/PKG_GIT_SHORT_COMMIT:=a224086/g' feeds/packages/utils/docker/Makefile
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
