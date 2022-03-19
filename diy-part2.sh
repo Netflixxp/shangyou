@@ -54,6 +54,10 @@ svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/v2ray-core
 svn co https://github.com/fw876/helloworld/trunk/shadowsocksr-libev package/shadowsocksr-libev
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/dns2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/ipt2socks
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/microsocks 
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdnsd-alt
 
 # themes
 svn co https://github.com/solidus1983/luci-theme-opentomato/trunk/luci/themes/luci-theme-opentomato package/luci-theme-opentomato
