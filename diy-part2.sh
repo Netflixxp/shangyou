@@ -79,12 +79,12 @@ git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git package/l
 git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
 
 #添加smartdns
-svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
-#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
-svn co https://github.com/kenzok8/openwrt-packages/branches/main/luci-app-smartdns package/luci-app-smartdns
-#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2021.34/' feeds/packages/net/smartdns/Makefile
-#sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=756029f5e9879075c042030bd3aa3db06d700270/' feeds/packages/net/smartdns/Makefile
-#sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=c2979d956127946861977781beb3323ad9a614ae55014bc99ad39beb7a27d481/' feeds/packages/net/smartdns/Makefile
+# smartdns
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=5a2559f0648198c290bb8839b9f6a0adab8ebcdc/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=fbe68affb4a7e3d81216c09ef9bc8d8ebc83c95aad82a4aec88b226dc4e79c3b/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37/g' package/luci-app-smartdns/Makefile
+
 
 #修改makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
