@@ -116,5 +116,9 @@ sed -i 's/PKG_HASH:=.*/PKG_HASH:=d916a26b62970e7c2f554110ed6af04c7ccff8e9f81ad17
 rm -f package/luci-theme-opentomcat/files/htdocs/fonts/advancedtomato.woff
 cp $GITHUB_WORKSPACE/general/advancedtomato.woff package/luci-theme-opentomcat/files/htdocs/fonts
 
+# fix kernel modules missing nfs_ssc.ko
+cp -f $GITHUB_WORKSPACE/general/003-add-module_supported_device-macro.patch target/linux/generic/backport-5.15
+cp -f $GITHUB_WORKSPACE/general/netdevices.mk package/kernel/linux/modules
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
