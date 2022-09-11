@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: Build OpenWrt R66s
 
 on:
   repository_dispatch:
@@ -24,7 +24,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_BRANCH: r66s
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -33,8 +33,8 @@ env:
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_ROOTFS
-  PRODUCT_NAME: ARMv8_ROOTFS
+  FILE_NAME: R66s_ROOTFS
+  PRODUCT_NAME:R66s_ROOTFS
 
 jobs:
   build:
@@ -189,4 +189,4 @@ jobs:
 
     - name: Telegram notification
       if: steps.organize.outputs.status == 'success' && !cancelled()
-      run: curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ steps.tag.outputs.release_tag }}纯代码底包编译完成，此为定时编译！" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+      run: curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=${{ steps.tag.outputs.release_tag }}Rss6纯代码底包编译完成，此为定时编译！" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
