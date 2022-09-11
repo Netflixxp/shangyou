@@ -24,6 +24,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 
 # 科学上网插件依赖
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
@@ -80,11 +81,10 @@ git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-ope
 
 #添加smartdns
 # smartdns
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37/g' feeds/packages/net/smartdns/Makefile
-sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=5a2559f0648198c290bb8839b9f6a0adab8ebcdc/g' feeds/packages/net/smartdns/Makefile
-sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=fbe68affb4a7e3d81216c09ef9bc8d8ebc83c95aad82a4aec88b226dc4e79c3b/g' feeds/packages/net/smartdns/Makefile
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37/g' package/luci-app-smartdns/Makefile
-
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37.2/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=822f02bab9f1607395ba8f4f113865bd56f99dcf/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=1b5906fd6d052e3079259392d8c90c0b6308e4e7b4245d7e92de1d5728c07602/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.2022.37.2/g' package/luci-app-smartdns/Makefile
 
 #修改makefile
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/luci\.mk/include \$(TOPDIR)\/feeds\/luci\/luci\.mk/g' {}
