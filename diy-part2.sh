@@ -68,6 +68,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdn
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/v2ray-geodata
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/dns2tcp
 svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
 
 # themes
 # Add luci-theme-argon
