@@ -65,14 +65,12 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/dns
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ipt2socks package/ipt2socks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/microsocks package/microsocks 
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/pdnsd-alt package/pdnsd-alt
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/v2ray-geodata
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/dns2tcp
 svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
 svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
 svn co https://gh.fakev.cn/kiddin9/openwrt-packages/trunk/luci-app-speederv2 package/luci-app-speederv2
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-core package/v2ray-core
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/v2ray-plugin
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/v2ray-geodata
 
